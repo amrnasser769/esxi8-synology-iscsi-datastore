@@ -61,7 +61,7 @@ Rescan the iSCSI adapter and verify that the LUN from Synology appears in **Stor
 ---
 
 ### Step 7: Create VMFS Datastore
-Create a VMFS 6 datastore on the detected Synology LUN. Name it `SA3400_iSCSI_DS01`.
+Create a VMFS 6 datastore on the detected Synology LUN. Name it `Synology_SAN_Storage`.
 
 ![Step 7: Create Datastore](screenshots/step7_create_datastore.png)
 
@@ -75,25 +75,26 @@ Create a test VM on the datastore, power cycle ESXi, and confirm the datastore m
 ---
 
 ## Security Considerations
-- Dedicated iSCSI VLAN
-- CHAP authentication enabled
-- VMkernel NICs only carry iSCSI traffic (no management/vMotion services)
-- ESXi firewall configured to allow only iSCSI traffic
+- Dedicated iSCSI VLAN to isolate storage traffic from management and vMotion
+- CHAP authentication enabled between ESXi and Synology for access control
+- VMkernel NICs only carry iSCSI traffic; no management or vMotion services enabled
+- ESXi firewall rules reviewed to allow only necessary iSCSI traffic
 
 ---
 
 ## Results / Impact
-- Centralized, redundant 12TB storage with RAID 5
-- Dual NIC multipathing for iSCSI ensures high availability
-- VMFS 6 datastore available for production VMs
-- Improved storage performance and scalability
+- Centralized, redundant 150TB storage with RAID 5
+- VMFS 6 datastore `Synology_SAN_Storage` available for production VMs
+- Improved storage performance and scalability for client virtual infrastructure
+- Fully validated by creating a test VM and rebooting the host
+
 ---
 
 ## Future Improvements
-- Implement 10GbE link aggregation
-- Add multiple LUNs for VM tiering
-- Integrate vSphere Storage DRS
-- Configure monitoring/alerting for iSCSI latency
+- Implement 10GbE link aggregation for additional performance
+- Add multiple LUNs for VM tiering (e.g., production vs test)
+- Integrate vSphere Storage DRS for automatic VM placement and balancing
+- Configure monitoring and alerting for iSCSI latency and throughput
 
 ---
 
