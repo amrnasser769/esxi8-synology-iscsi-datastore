@@ -10,7 +10,7 @@ Enterprise deployment of VMware ESXi 8 with Synology SA3400 iSCSI datastore, dua
   - NICs: 4x 1GbE LAN, 2x 10GbE LAN, 2x 10Gb Fiber
 - VMware ESXi 8.0.3
 - Synology SA3400
-  - 12 TB usable capacity, RAID 5
+  - 150 TB usable capacity,
 - VMFS Version: VMFS 6
 - Protocols: iSCSI
 - Dedicated VLAN for iSCSI
