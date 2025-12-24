@@ -67,17 +67,10 @@ Create a VMFS 6 datastore on the detected Synology LUN. Name it `SA3400_iSCSI_DS
 
 ---
 
-### Step 8: Configure Multipathing
-Set the multipathing policy to **Round Robin** for redundancy and load balancing using dual NICs.
-
-![Step 8: Multipathing Configuration](screenshots/step8_multipathing.png)
-
----
-
-### Step 9: Validate Datastore
+### Step 8: Validate Datastore
 Create a test VM on the datastore, power cycle ESXi, and confirm the datastore mounts automatically.
 
-![Step 9: Validation](screenshots/step9_validation.png)
+![Step 8: Validation](screenshots/step8_validation.png)
 
 ---
 
