@@ -23,3 +23,12 @@ Enterprise deployment of VMware ESXi 8 with Synology SA3400 iSCSI datastore, dua
 Create a dedicated VMkernel NIC on ESXi for iSCSI traffic. Ensure the IP is static, on the same subnet as the Synology iSCSI target, and no services are enabled except iSCSI.
 
 ![Step 1: Create VMkernel NIC](screenshots/step1_create_vmkernel.png)
+
+---
+
+### Step 2: Enable Software iSCSI Adapter
+Add the ESXi software iSCSI adapter and bind it to the VMkernel NIC(s).
+
+![Step 2: Enable iSCSI Adapter](screenshots/step2_enable_iscsi_adapter.png)
+
+---
